@@ -51,7 +51,7 @@ def tracking_standalone(full_path, output_tiff_stack_path, combined_csv_path):
     def preprocess_image_otsu(frame):
         """Convert frame to grayscale and apply Otsu's thresholding."""
         gray = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+        _, binary = cv2.threshold(gray, 0, 255, cv2.THRESH_BINARY)
         return binary
     
     def detect_contours(binary_image):
